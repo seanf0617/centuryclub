@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}CENTURY CLUB Running{% endblock %}
+
+{% block menu %}
+ <ul id="menu">
+    <li class="selected">
+      <a href="/">Home</a>
+    </li>
+    {% if user.is_authenticated %}
+    <li>
+      <a href="record"> Record Miles {{ user.username }}</a>
+    </li>
+    <li>
+      <a href="accounts/logout">Logout</a>
+    </li>
+    {% else %}
+    <li>
+      <a href="accounts/login">Login</a>
+    </li>
+  
+    <li>
+      <a href="accounts/signup">Signup</a>
+    </li>
+    {% endif %}
+
+    <li>
+      <a href="about.html">About</a>
+    </li>
+    <li>
+      <a href="running.html">Running</a>
+    </li>
+  </ul>
+
+{% endblock %}
+
+{% block content %}
+<div id="body" class="home">
+  <div class="header">
+    <div>
+      <h1>RUN<br>with The<br>Century Club</h1>
+    </div>
+  </div>
+  <div class="body">
+    <div>
+      <h1></h1>
+      <p>Running, Friendship, Motivation</p>
+      <a href="blog.html" class="more">Read More</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
