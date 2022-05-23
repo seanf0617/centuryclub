@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block menu %}
+{% if user.is_authenticated %}
+  <h1>Welcome Back {{ user.username }}!</h1>
+{% else %}
+  <h2>Log In</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Log In</button>
+  </form>
+
+{% endif %}
+
+{% endblock %}
+
+{% block content %}
+<div id="body" class="home">
+  <div class="header">
+    <div>
+      <h1>RUN<br>with The<br>Century Club</h1>
+    </div>
+  </div>
+  <div class="body">
+    <div>
+      <h1></h1>
+      <p>Running, Friendship, Motivation</p>
+      <a href="blog.html" class="more">Read More</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
