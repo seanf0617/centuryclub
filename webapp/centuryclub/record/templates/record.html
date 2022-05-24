@@ -1,5 +1,31 @@
-<html>
-    <head>
-        <body>Records !!!</body>
-    </head>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block menu %}
+{% if user.is_authenticated %}
+  <h1>Welcome Back {{ user.username }}!</h1>
+  <h2>Recording page !</h2>
+  {{ form.as_p }}
+{% else %}
+  <h2>Log In</h2>
+  <form method="post">
+    <li>
+        <a href="../accounts/login">Login</a>
+      </li>
+    </form>
+
+{% endif %}
+
+{% endblock %}
+
+{% block content %}
+<div id="body" class="home">
+  <div class="body">
+    <div>
+      <h1></h1>
+      <p>Running, Friendship, Motivation</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
