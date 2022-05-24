@@ -5,5 +5,6 @@ To Do Workouts
 - Edit workouts 
 - Month to month, year to year comparrson User 
 - Add edit user screen - https://stackoverflow.com/questions/22567320/django-edit-user-profile 
-- add password reset 
+- add password reset accounts/password_reset/
 - Add DOB
+- Add local TZ stuff ?
