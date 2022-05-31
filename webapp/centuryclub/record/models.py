@@ -12,8 +12,6 @@ class RecordActivity(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    # def __str__(self):
-    #     return self.name
 
 class RecordMonthTarget(models.Model):
     username = models.CharField(null=True, blank=False, max_length=150)
