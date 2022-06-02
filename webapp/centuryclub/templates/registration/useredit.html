@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}User Edit{% endblock %}
+
+{% block menu %}
+
+{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  <h1>Welcome Back {{ user.username }}!</h1>
+{% else %}
+  <div class="content-section col-md-8 col-md-offset-2">
+    <form method="POST" style="border: 1px solid black; margin: 0%; padding:0%; border-radius:1%;">
+      {% csrf_token %}
+      <fieldset class="form-group">
+        {{ form|crispy}}
+      </fieldset>
+      <center>
+        <button style="background: black; padding:2%; font-size: 2rem; color:white;" class="btn btn-outline-info" type="submit"><span class="glyphicon glyphicon-check"></span> &nbsp; sign up</button>
+      </center>
+      <br />
+      <sub><a href="{% url "login" %}" style="text-decoration: none; color: blue; padding:3%; cursor:pointer;">Already have an account ?</a></sub>
+    </form>
+  </div>
+{% endif %}
+
+<div id="body" class="home">
+  <div class="body">
+    <div>
+      <h1></h1>
+      <p>Running, Friendship, Motivation</p>
+      <a href="blog.html" class="more">Read More</a>
+    </div>
+  </div>
+</div>  
+{% endblock %}
