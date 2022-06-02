@@ -21,7 +21,6 @@ class SignUpView(CreateView):
     template_name = "registration/signup.html"
 
 
-################ login forms###################################################
 def Login(request):
     if request.method == 'POST':
   

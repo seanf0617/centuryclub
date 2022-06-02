@@ -8,7 +8,7 @@ class CustomUser(AbstractUser):
     last_name = models.CharField(null=True, blank=False, max_length=100)
     targetmiles = models.IntegerField(blank=True, null=True)
     location = models.CharField(null=True, blank=True, max_length=100)
-    # DOB
+    # Add DOB
 
     def __str__(self):
         return'{} {}'.format(self.first_name, self.last_name)

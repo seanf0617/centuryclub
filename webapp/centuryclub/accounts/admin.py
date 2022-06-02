@@ -12,7 +12,7 @@ class CustomUserAdmin(UserAdmin):
     form = CustomUserChangeForm
     model = CustomUser
     list_display = ["email", "username", "first_name", "last_name", "targetmiles", "location"]
-    # DOB
+    # Add DOB
     
 
 admin.site.register(CustomUser, CustomUserAdmin)

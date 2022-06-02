@@ -14,7 +14,7 @@ class CustomUserCreationForm(UserCreationForm):
         labels = {'last_name':'Last name',}
         labels = {'location':'Location',}
         labels = {'targetmiles':'Target Miles',}
-        # DOB
+        # Add DOB
 
 
 class CustomUserChangeForm(UserChangeForm):
