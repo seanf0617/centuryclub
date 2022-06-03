@@ -42,3 +42,19 @@ def Login(request):
             messages.info(request, f'account does not exit plz sign in')
     form = AuthenticationForm()
     return render(request, 'user/login.html', {'form':form, 'title':'log in'})
+
+
+def update_profile(request):
+    args = {}
+
+    if request.method == 'POST':
+        form = EditView(request.POST, instance=request.user)
+        form.actual_user = request.user
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('update_profile_success'))
+    else:
+        form = EditView()
+
+    args['form'] = form
+    return render(request, 'registration/update_profile.html', args)
