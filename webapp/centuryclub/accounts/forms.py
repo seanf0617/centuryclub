@@ -32,7 +32,7 @@ class CustomUserChangeForm(UserChangeForm):
         username = self.cleaned_data.get('username')
         email = self.cleaned_data.get('email')
 
-        if email and User.objects.filter(email=email).exclude(username=username).count():
+        if email and CustomUser.objects.filter(email=email).exclude(username=username).count():
             raise forms.ValidationError('This email address is already in use. Please supply a different email address.')
         return email
 

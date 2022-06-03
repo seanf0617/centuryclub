@@ -44,6 +44,7 @@ def Login(request):
     return render(request, 'user/login.html', {'form':form, 'title':'log in'})
 
 
+# when is this called ????
 def update_profile(request):
     args = {}
 
