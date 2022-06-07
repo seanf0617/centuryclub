@@ -1,4 +1,5 @@
 # centuryclub
+Fix sign up so it goes to main screen and logs in instead of starting on sign up again.....
 To Do Workouts 
 - Add record workout 
 - View last workouts 
