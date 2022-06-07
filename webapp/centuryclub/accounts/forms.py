@@ -37,7 +37,8 @@ class CustomUserChangeForm(UserChangeForm):
         return email
 
     def save(self, commit=True):
-        user = super(CustomUserCreationForm, self).save(commit=False)
+        #  self).all(*args, **kwargs)  or self).save(commit=False)
+        user = super(CustomUser, self).all(*args, **kwargs)
         user.email = self.cleaned_data['email']
 
         if commit:
