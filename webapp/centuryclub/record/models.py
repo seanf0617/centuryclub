@@ -29,7 +29,7 @@ class RecordMonthTarget(models.Model):
 
 
 class ExerciseType(models.Model):
-    exercisetype = models.CharField(null=True, blank=False, max_length=50)
+    exercisetype = models.CharField(null=True, blank=False, max_length=50, help_text='Enter a core exercise type e.g. running')
 
     def __str__(self):
         return self.exercisetype #???
