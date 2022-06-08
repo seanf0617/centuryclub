@@ -4,12 +4,18 @@ from django.conf import settings
 import datetime
 
 
-# Create your models here.
+class ExerciseType(models.Model):
+    exercisetype = models.CharField(null=True, blank=False, max_length=50, help_text='Enter a core exercise type e.g. running')
+
+    def __str__(self):
+        return self.exercisetype #???
+
+
 class RecordActivity(models.Model):
     pass
     # add additional fields in here
     username = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.RESTRICT)
-    exercisetype = models.ForeignKey('ExerciseType', on_delete=models.SET_NULL, null=True, blank=False)
+    exercisetype = models.ForeignKey(ExerciseType, on_delete=models.SET_NULL, null=True, blank=False)
     distance = models.DecimalField(max_digits=5, decimal_places=2)
     date = models.DateField()
     created_at = models.DateTimeField(auto_now_add=True)
@@ -26,10 +32,3 @@ class RecordMonthTarget(models.Model):
 
     def __str__(self):
         return self.username #???
-
-
-class ExerciseType(models.Model):
-    exercisetype = models.CharField(null=True, blank=False, max_length=50, help_text='Enter a core exercise type e.g. running')
-
-    def __str__(self):
-        return self.exercisetype #???
