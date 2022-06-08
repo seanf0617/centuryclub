@@ -9,14 +9,14 @@ class RecordActivity(models.Model):
     pass
     # add additional fields in here
     username = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.RESTRICT)
-    exercisetype = models.CharField(null=True, blank=False, max_length=50)
+    exercisetype = models.ForeignKey('ExerciseType', on_delete=models.SET_NULL, null=True, blank=False)
     distance = models.DecimalField(max_digits=5, decimal_places=2)
     date = models.DateField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.distance #???
+        return self.username #???
 
 
 class RecordMonthTarget(models.Model):
@@ -25,7 +25,7 @@ class RecordMonthTarget(models.Model):
     targetdate = models.DateField(default=datetime.date.today)
 
     def __str__(self):
-        return self.objects #???
+        return self.username #???
 
 
 class ExerciseType(models.Model):
